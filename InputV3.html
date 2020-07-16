@@ -1,0 +1,517 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=latin-ext"
+        rel="stylesheet" />
+    <style type="text/css">
+        :root {
+            --input-background-color: #FFF;
+            --input-border-color: #bfbfbf;
+            --input-border-color-inline: #FFF;
+            --input-border-color-checked: #2eae67;
+            --input-background-color-checked: #3ece7e;
+            --input-border-color-inline-checked: #3ece7e;
+            --input-border-color-disabled: #bfbfbf;
+            --input-background-color-disabled: #efefef;
+            --input-border-color-inline-disabled: #bfbfbf;
+            --input-border-color-hover: #3ece7e;
+            --input-background-color-hover: #FFF;
+            --input-border-color-inline-hover: #bfbfbf;
+            --input-border-color-focus: #2eae67;
+        }
+
+        body {
+            color: #333;
+            font-size: 13px;
+            font-family: 'Source Sans Pro', Arial;
+            line-height: 20px;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        div.form-group {}
+
+        div.form-check {
+            padding-left: 185px;
+        }
+
+        div.form-group,
+        div.form-check {
+            margin-bottom: 10px;
+        }
+
+        label {
+            line-height: 20px;
+            vertical-align: middle;
+            min-width: 180px;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        /* Reset Css */
+        input,
+        select,
+        textarea,
+        input[type='checkbox'],
+        input[type='radio'] {
+            border: none;
+            position: relative;
+            -webkit-appearance: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus,
+        input[type='checkbox']:focus,
+        input[type='radio']:focus {
+            outline: 0;
+        }
+
+        input[type='submit'],
+        button {
+            border: none;
+            position: relative;
+            -webkit-appearance: none;
+            margin: 0px;
+            padding: 0px;
+            outline: 0;
+        }
+
+
+        /* Customization input, select, textarea */
+        input,
+        select,
+        textarea {
+            border-radius: 4px;
+            border: solid 1.7px;
+            background-color: var(--input-background-color);
+            border-color: var(--input-border-color);
+            line-height: 26px;
+            vertical-align: middle;
+            min-width: 50px;
+            padding: 2px 5px;
+            -webkit-transition: border-color 200ms;
+            transition: border-color 200ms;
+        }
+
+        input:hover,
+        select:hover,
+        textarea:hover {
+            border-color: var(--input-border-color-hover);
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--input-border-color-focus);
+        }
+
+        /* Customization buttons */
+        input[type='submit'],
+        button {
+            border-radius: 4px;
+            border: solid 1.7px;
+            background-color: var(--input-background-color);
+            border-color: var(--input-border-color);
+            line-height: 26px;
+            vertical-align: middle;
+            min-width: 50px;
+            padding: 2px 5px;
+            -webkit-transition: border-color 200ms;
+            transition: border-color 200ns;
+        }
+
+        input[type='submit']:hover,
+        button:hover {
+            border-color: var(--input-border-color-hover);
+        }
+
+        input[type='submit']:focus,
+        button:focus {
+            border-color: var(--input-border-color-focus);
+        }
+
+        /* Customization input range */
+        input[type='range'] {
+            -webkit-appearance: none;
+            background: var(--input-background-color);
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: opacity 200ms;
+            transition: opacity 200ms;
+        }
+
+        input[type='range']:hover {
+            opacity: 1;
+        }
+
+        input[type='range']::-webkit-slider-thumb {
+            border-radius: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 22px;
+            background: var(--input-background-color-checked);
+            cursor: pointer;
+        }
+
+        input[type='range']:hover::-webkit-slider-thumb {
+            background: var(--input-border-color-inline-checked);
+        }
+
+        /* Customization select */
+        select {
+            padding-right: 15px;
+        }
+
+        select::before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: var(--input-background-color-hover);
+        }
+
+        select::after {
+            display: block;
+            position: absolute;
+            content: "";
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            transition: background-color 500ms, border-color 250ms;
+            background-color: var(--input-border-color-inline-hover);
+        }
+
+        /* Customization checkbox & radio */
+        input[type='checkbox'],
+        input[type='radio'] {
+            width: 22px;
+            height: 22px;
+            line-height: 18px;
+            min-width: 1px !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        input[type='checkbox']::before,
+        input[type='radio']::before {
+            display: block;
+            position: absolute;
+            content: "";
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background-color: var(--input-background-color);
+            transition: background-color 500ms, border-color 500ms;
+        }
+
+        input[type='checkbox']::after,
+        input[type='radio']::after {
+            display: block;
+            position: absolute;
+            content: "";
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            transition: background-color 500ms, border-color 250ms;
+        }
+
+        /* Customization search */
+        input[type='search'] {}
+
+        button~input[type='search'] {
+            margin-right: -20px;
+        }
+
+        input[type='search']+button {
+            margin-right: -20px;
+        }
+
+        input[type='search']~button {
+            margin-right: -20px;
+        }
+
+        /* Customization checbox */
+        input[type='checkbox']::before {
+            border-radius: 4px;
+            border: solid 1.6px;
+            border-color: var(--input-border-color);
+        }
+
+        input[type='checkbox']::after {
+            border: solid;
+            border-color: var(--input-border-color-inline);
+            border-width: 0 3px 3px 0;
+            width: 4px;
+            height: 6px;
+            left: 8px;
+            bottom: 8px;
+        }
+
+        input[type='checkbox']:not(:checked)::before {
+            border-color: var(--input-border-color);
+        }
+
+        input[type='checkbox']:not(:checked)::after {
+            border-color: var(--input-border-color-inline);
+        }
+
+        input[type='checkbox']:checked:not(:disabled)::before {
+            border-color: var(--input-border-color-checked);
+            background-color: var(--input-background-color-checked);
+        }
+
+        input[type='checkbox']:read-only::before,
+        input[type='checkbox']:-moz-read-only::before {
+            border-color: var(--input-border-color-inline-checked);
+        }
+
+        input[type='checkbox']:disabled::before {
+            border-color: var(--input-border-color-disabled);
+            background-color: var(--input-background-color-disabled);
+        }
+
+        input[type='checkbox']:disabled::after {
+            border-color: var(--input-border-color-inline-disabled);
+        }
+
+        input[type='checkbox']:checked:not(:disabled):focus::before,
+        input[type='checkbox']:not(:checked):not(:disabled):focus::before
+        {
+            border-color: var(--input-border-color-hover);
+        }
+
+        input[type='checkbox']:not(:checked):not(:disabled):hover::before {
+            border-color: var(--input-border-color-hover);
+            background-color: var(--input-background-color-hover);
+        }
+
+        input[type='checkbox']:not(:checked):not(:disabled):hover:not(:checked)::after {
+            border-color: var(--input-border-color-inline-hover);
+        }
+
+        /* Customization radio */
+        input[type='radio']::before {
+            border-radius: 50%;
+            border: solid 2px;
+        }
+
+        input[type='radio']::after {
+            border: solid;
+            border-color: var(--input-border-color-inline-checked);
+            border-width: 6px;
+            border-radius: 50%;
+            width: 0px;
+            height: 0px;
+            left: 5px;
+            bottom: 5px;
+        }
+
+        input[type='radio']:not(:checked)::before {
+            border-color: var(--input-border-color);
+        }
+
+        input[type='radio']:not(:checked)::after {
+            border-color: var(--input-border-color-inline);
+        }
+
+        input[type='radio']:checked:not(:disabled)::before {
+            border-color: var(--input-border-color-checked);
+            background-color: var(--input-background-color);
+        }
+
+        input[type='radio']:read-only::before,
+        input[type='checkbox']:-moz-read-only::before {
+            border-color: var(--input-border-color-inline-checked);
+        }
+
+        input[type='radio']:disabled::before {}
+
+        input[type='radio']:disabled::after {
+            border-color: var(--input-border-color-inline-disabled);
+        }
+        
+        input[type='radio']:checked:not(:disabled):focus::before,
+        input[type='radio']:not(:checked):not(:disabled):focus::before
+        {
+            border-color: var(--input-border-color-hover);
+        }
+
+        input[type='radio']:not(:checked):not(:disabled):hover::before {
+            border-color: var(--input-border-color-hover);
+            background-color: var(--input-background-color);
+        }
+
+        input[type='radio']:not(:checked):not(:disabled):hover:not(:checked)::after {
+            border-color: var(--input-border-color-inline-hover);
+        }
+
+        /* Jquery validation */
+        input[required]+span[data-valmsg-for] {
+            display: block;
+            opacity: 0;
+            height: 0;
+            color: #FF0000;
+            -webkit-transition: opacity 250ms ease-out, height ease 250ms;
+            transition: opacity 0250ms ease-out, height ease 250ms;
+        }
+
+        input[required]+span[data-valmsg-for]:not(:empty) {
+            opacity: 1;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Text Input</label>
+            <input type="text" placeholder="Sample text" />
+        </div>
+        <div class="form-group">
+            <label for="validation-sample">Validation Sample</label>
+            <input type="text" name="validation-sample" id="validation-sample" required data-val="true"
+                data-val-required="Please enter a sample text" />
+            <span data-valmsg-for="validation-sample" data-valmsg-replace="true"></span>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Search</label>
+            <input type="search" />
+            <button type="button">Search</button>
+        </div>
+        <div class="form-group">
+            <label for="validation-email">Email</label>
+            <input type="email" name="validation-email" id="validation-email" placeholder="name@example.com" required
+                data-val="true" data-val-required="Please enter a valid email address" />
+            <span data-valmsg-for="validation-email" data-valmsg-replace="true"></span>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Tel</label>
+            <input type="tel" />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Date</label>
+            <input type="date" />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Month</label>
+            <input type="month" />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Week</label>
+            <input type="week" />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Time</label>
+            <input type="time" />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">DateTime</label>
+            <input type="datetime" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Number</label>
+            <input type="number" />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Color</label>
+            <input type="color" />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">File</label>
+            <input type="file" />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Range</label>
+            <input type="range" />
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Example multiple select</label>
+            <select multiple name="exampleFormControlSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
+            <select class="custom-select my-1 mr-sm-2" name="inlineFormCustomSelectPref">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea name="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" id="defaultCheck1" />
+            <label class="form-check-label" for="defaultCheck1">
+                Default checkbox
+            </label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="defaultCheck2" checked />
+            <label class="form-check-label" for="defaultCheck2">
+                Checked checkbox
+            </label>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" id="defaultCheck2" disabled />
+            <label class="form-check-label" for="defaultCheck3">
+                Disabled checkbox
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input type="radio" name="exampleRadios" id="exampleRadios1" checked />
+            <label class="form-check-label" for="exampleRadios1">
+                Default radio
+            </label>
+        </div>
+        <div class="form-check">
+            <input type="radio" name="exampleRadios" id="exampleRadios2" />
+            <label class="form-check-label" for="exampleRadios2">
+                Second default radio
+            </label>
+        </div>
+        <div class="form-check disabled">
+            <input type="radio" name="exampleRadios" id="exampleRadios3" disabled />
+            <label class="form-check-label" for="exampleRadios3">
+                Disabled radio
+            </label>
+        </div>
+        <div class="form-check">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+    </form>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"
+    type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.js"
+    type="text/javascript"></script>
+
+</html>
