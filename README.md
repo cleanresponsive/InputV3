@@ -10,4 +10,4 @@ If you have used **a lot of input** in your large projects and suffered from **j
 
 You can add the css codes in the **"style"** block in **"InputV3.html"** to your own style file.
 
-![alt text](https://github.com/dizaynplus/InputV3/master/InputV3.png?raw=true)
+![InputV3 Css Form Elements alternative to ICheck!](https://raw.githubusercontent.com/dizaynplus/InputV3/master/InputV3.png)
