@@ -1,4 +1,4 @@
-# InputV3 alternative to ICheck!
+# InputV3 Css Form Elements alternative to ICheck!
 
 Büyük projelerinizde **çok fazla input** kullanmış ve **javascript render süreleri**nden muzdaripseniz, **ICheck altarnatifi** **css** **InputV3** deneyebilirsiniz.
 
