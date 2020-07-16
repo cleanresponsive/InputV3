@@ -9,3 +9,5 @@ If you have used **a lot of input** in your large projects and suffered from **j
 **"InputV3.html"** içerisinde **"style"** bloğundaki css kodlarını kendi style dosyanıza ekleyebilirsiniz.
 
 You can add the css codes in the **"style"** block in **"InputV3.html"** to your own style file.
+
+![alt text](https://github.com/dizaynplus/InputV3/master/InputV3.png?raw=true)
